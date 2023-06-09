@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components';
+import { Header } from './components/header/header'
+import { appConstants } from './constants/app-constants';
+import { DaysTimeline } from './components/days-timeline/days-timeline';
+import { Footer } from './components/footer/footer';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export const App = () => {
+
+	const Wrapper = styled.section`
+		display: flex;
+		flex-direction: column;
+		background-color: ${appConstants.appearance.baseWhite};
+	`;
+
+	return (
+		<Wrapper>
+			<Header />
+			<DaysTimeline />
+			<Footer />
+		</Wrapper>
+	)
 }
-
-export default App;
