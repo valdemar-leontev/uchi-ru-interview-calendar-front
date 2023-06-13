@@ -3,9 +3,7 @@ import { appConstants } from '../../constants/app-constants';
 import { BackIcon, ForwardIcon } from '../../icons/icons';
 import { getDayString, getFirstDayOfTheWeek } from '../../helpers/date-helper';
 
-export const DaysTimeline = () => {
-
-  const Wrapper = styled.section`
+const Wrapper = styled.section`
 		display: flex;
 		flex-direction: column;
 		padding: 0.8rem 1.5rem;
@@ -14,16 +12,19 @@ export const DaysTimeline = () => {
     border-top: 2px solid #ececec;
     padding-left: 60px;
     font-weight: 500;
+
+    position: sticky;
+    top: 6rem;
 	`;
 
-  const WeekWrapper = styled.section`
+const WeekWrapper = styled.section`
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
   `;
 
-  const DayWrapper = styled.section`
+const DayWrapper = styled.section`
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -34,7 +35,7 @@ export const DaysTimeline = () => {
       }
   `;
 
-  const DayNumber = styled.section<{ $active?: boolean; }>`
+const DayNumber = styled.section<{ $active?: boolean; }>`
       display: flex;
       align-items: center;
       justify-content: center;
@@ -46,7 +47,7 @@ export const DaysTimeline = () => {
       color: ${props => props.$active ? "white" : "initial"};
   `;
 
-  const MonthWrapper = styled.section`
+const MonthWrapper = styled.section`
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -54,6 +55,7 @@ export const DaysTimeline = () => {
       padding: 0 0.3rem;
   `;
 
+export const DaysTimeline = () => {
   return (
     <Wrapper>
       <WeekWrapper>
