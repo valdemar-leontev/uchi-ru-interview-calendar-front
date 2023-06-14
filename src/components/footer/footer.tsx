@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import { appConstants } from '../../constants/app-constants';
+import { useDispatch, useSelector } from 'react-redux';
+import { deleteEvent, setSelectedEvent } from '../../slices/scheduleSlice';
 
 const FooterWrapper = styled.section`
   display: flex;
@@ -22,10 +24,18 @@ const FooterWrapper = styled.section`
 `;
 
 export const Footer = () => {
+  const selectedEvent: string | any = useSelector((state: any) => state.schedule.selectedEvent);
+  const dispatch = useDispatch();
+
   return (
     <FooterWrapper>
       <span>Today</span>
-      <span>Delete</span>
+      {
+        selectedEvent === null ? null : <span onClick={() => {
+          dispatch(deleteEvent());
+          dispatch(setSelectedEvent(null));
+        }}>Delete</span>
+      }
     </FooterWrapper>
   )
 }

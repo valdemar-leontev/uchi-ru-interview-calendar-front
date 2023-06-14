@@ -3,7 +3,7 @@ import { Header } from './components/header/header'
 import { appConstants } from './constants/app-constants';
 import { DaysTimeline } from './components/days-timeline/days-timeline';
 import { Footer } from './components/footer/footer';
-import TimeBar from './components/time-bar/time-bar';
+import { ScheduleGrid } from './components/schedule-grid/schedule-grid';
 
 const Wrapper = styled.section`
 	display: flex;
@@ -16,7 +16,7 @@ export const App = () => {
 		<Wrapper>
 			<Header />
 			<DaysTimeline />
-			<TimeBar />
+			<ScheduleGrid />
 			<Footer />
 		</Wrapper>
 	)

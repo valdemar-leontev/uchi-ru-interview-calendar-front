@@ -21,7 +21,11 @@ export const Header = () => {
 	return (
 		<Wrapper>
 			<Title>{appConstants.title}</Title>
-			<AddIcon size={appConstants.appearance.bigIconSize} color={appConstants.appearance.baseRed} />
+			<AddIcon
+				onClick={() => prompt('Enter event time:\nYYYY-MM-DD HH:mm:ss',)}
+				size={appConstants.appearance.bigIconSize}
+				color={appConstants.appearance.baseRed}
+			/>
 		</Wrapper>
 	)
 }
