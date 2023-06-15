@@ -13,6 +13,7 @@ const FooterWrapper = styled.section`
   width: 100%;
   height: 60px;
   bottom: 0;
+  max-width: 740px;
   
   span {
     padding: 0 1.5rem;
