@@ -7,11 +7,11 @@ import { useSelector } from 'react-redux';
 const Wrapper = styled.section`
 		display: flex;
 		flex-direction: column;
-		padding: 0.8rem 1.5rem;
+		padding: 0.8rem 0.5rem;
     background-color: ${appConstants.appearance.baseGrey};
     border-bottom: 2px solid #ececec;
     border-top: 2px solid #ececec;
-    padding-left: 60px;
+    padding-left: 70px;
     font-weight: 500;
 
     position: sticky;
