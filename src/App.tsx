@@ -9,6 +9,8 @@ const Wrapper = styled.section`
 	display: flex;
 	flex-direction: column;
 	background-color: ${appConstants.appearance.baseWhite};
+	max-width: 740px;
+	margin: 0 auto;
 `;
 
 export const App = () => {

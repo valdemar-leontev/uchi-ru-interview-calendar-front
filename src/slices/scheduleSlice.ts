@@ -4,22 +4,29 @@ export const ScheduleSlice = createSlice({
     name: 'schedule',
     initialState: {
         activeEventList: [
-            '0-1', '0-5',
-            '1-2', '1-3',
-            '2-4', '2-6', '2-1',
-            '3-6',
-            '5-2',
-            '8-5',
-            '12-0', '12-1', '12-2', '12-3', '12-4', '12-5', '12-6', '12-7',
-            '15-3',
-            '17-4',
-            '20-1',
+            '2023-06-12-00', '2023-06-13-00',
+            '2023-06-2-01',
+            '2023-06-17-08',
+            '2023-06-12-12', '2023-06-13-12', '2023-06-14-12', '2023-06-15-12', '2023-06-16-12', '2023-06-17-12', '2023-06-18-12',
+            '2023-06-15-15',
+            '2023-06-17-17',
+            '2023-06-13-20',
+            '2023-06-17-05',
+            '2023-06-14-04',
+            '2023-06-18-00',
         ] as string[],
         selectedEvent: null as string | null,
+        selectedYear: new Date().getFullYear(),
+        selectedMonth: (new Date().getMonth() + 1).toString().padStart(2, '0'),
+        selectedDay: new Date().getDate(),
     },
     reducers: {
+        createEvent: (state, event) => {
+            state.activeEventList = [...state.activeEventList, event.payload];
+        },
+
         deleteEvent: (state) => {
-            state.activeEventList = state.activeEventList.filter(item => item !== state.selectedEvent);
+            state.activeEventList = state.activeEventList.filter(event => event !== state.selectedEvent);
         },
 
         setSelectedEvent: (state, event) => {
@@ -28,6 +35,6 @@ export const ScheduleSlice = createSlice({
     },
 })
 
-export const { deleteEvent, setSelectedEvent } = ScheduleSlice.actions;
+export const { deleteEvent, setSelectedEvent, createEvent } = ScheduleSlice.actions;
 
 export default ScheduleSlice.reducer;

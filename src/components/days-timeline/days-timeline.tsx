@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import { appConstants } from '../../constants/app-constants';
 import { BackIcon, ForwardIcon } from '../../icons/icons';
-import { getDayString, getFirstDayOfTheWeek } from '../../helpers/date-helper';
+import { getDayString, getFirstDayOfTheWeek, getMonthNameByNumber } from '../../helpers/date-helper';
+import { useSelector } from 'react-redux';
 
 const Wrapper = styled.section`
 		display: flex;
@@ -56,6 +57,9 @@ const MonthWrapper = styled.section`
   `;
 
 export const DaysTimeline = () => {
+  const selectedYear: string[] | any = useSelector((state: any) => state.schedule.selectedYear);
+  const selectedMonth: string[] | any = useSelector((state: any) => state.schedule.selectedMonth);
+
   return (
     <Wrapper>
       <WeekWrapper>
@@ -74,7 +78,7 @@ export const DaysTimeline = () => {
 
       <MonthWrapper>
         <BackIcon size={appConstants.appearance.normalIconSize} color={appConstants.appearance.baseRed} />
-        <span>March 2019</span>
+        <span>{getMonthNameByNumber(selectedMonth)} {selectedYear}</span>
         <ForwardIcon size={appConstants.appearance.normalIconSize} color={appConstants.appearance.baseRed} />
       </MonthWrapper>
     </Wrapper>
