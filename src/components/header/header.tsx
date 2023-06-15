@@ -11,10 +11,11 @@ const Wrapper = styled.section`
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
-	padding: 2rem;
+	padding: 0 2rem;
 	position: sticky;
 	top: 0;
 	background-color: ${appConstants.appearance.baseWhite};
+	height: 6rem;
 `;
 
 const Title = styled.span`
